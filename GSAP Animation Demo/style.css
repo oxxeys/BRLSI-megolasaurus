@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-size: 100px;
+}
+  body{
+    background-color: #1b1b1b;
+  }
+
+  .container {
+    height: 100vh;
+    background: #1b1b1b;
+    padding-bottom: 50vh;
+    padding-top: 50vh;
+  }
+  p{
+    text-align: center;
+  }
+  
+  .box {
+    width: 100;
+    height: 100px;
+    margin: 10px;
+    background: #ffa31a;
+    border-radius: 5px;
+    object-fit:fill;
+  }
+#archeologist{
+    z-index: 1;
+    margin: 0;
+}
+  #whiteBar{
+    background-color: white;
+    width: 2px;
+    height: 5px;
+    /* left: 90vw; */
+    position: absolute;
+    opacity: 0;
+}
