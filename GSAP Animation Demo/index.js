@@ -6,8 +6,12 @@ window.addEventListener('resize', function (event) {
     console.log(window.innerWidth)
 }, true);
 console.log(window.innerWidth)
+
+gsap.set("#archeologist", {transformOrigin: "50vw",})
 gsap.to("#archeologist", {
-    //x: 100,
+    transformOrigin: '50% 50%',
+    rotation: '+=360',
+    x: '90vw',
     scrollTrigger: {
         trigger: '.box',  // this will use the archeologist as the trigger
         start: "top 80%", //start when top of archeologist hits 80% of screen down
@@ -17,12 +21,11 @@ gsap.to("#archeologist", {
         //pin: true,
         //markers: true,
     },
-    x: '90vw',
-    
 });
 
+
+
 gsap.to("#archeologist", {
-    //x: 100,
     scrollTrigger: {
         trigger: '.box',  // this will use the archeologist as the trigger
         start: "top 20%", //start when top of archeologist hits 80% of screen down
@@ -32,6 +35,7 @@ gsap.to("#archeologist", {
         pin: true,
     },
 });
+
 
 gsap.set("#whiteBar", {x: "90vw"})
 gsap.to("#whiteBar", {
