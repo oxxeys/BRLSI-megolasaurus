@@ -9,8 +9,6 @@ console.log(window.innerWidth)
 
 gsap.set("#archeologist", {transformOrigin: "50vw",})
 gsap.to("#archeologist", {
-    transformOrigin: '50% 50%',
-    rotation: '+=360',
     x: '90vw',
     scrollTrigger: {
         trigger: '.box',  // this will use the archeologist as the trigger
