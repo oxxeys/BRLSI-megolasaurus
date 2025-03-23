@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import GUI from 'lil-gui'
 import { MarchingCubes } from 'three/examples/jsm/Addons.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 //got to 37.16
 
@@ -39,6 +40,8 @@ const textureLoader = new THREE.TextureLoader()
 const gradientTexture = textureLoader.load('textures/gradients/3.jpg')
 gradientTexture.magFilter = THREE.NearestFilter
 
+
+
 //Meshes
 const objectsDistance = 4
 const meshContainer = [];
@@ -69,7 +72,22 @@ meshContainer[0].position.x = 2
 meshContainer[1].position.x = - 2
 meshContainer[2].position.x = 2
 
-scene.add(meshContainer[0], meshContainer[1], meshContainer[2])
+const loader = new GLTFLoader();
+
+// loader.load( 'path/to/model.glb', function ( gltf ) {
+
+// 	scene.add( gltf.scene );
+
+// }, undefined, function ( error ) {
+
+// 	console.error( error );
+
+// } );
+
+
+
+//scene.add(meshContainer[0], meshContainer[1], meshContainer[2])
+
 
 
 
@@ -78,7 +96,18 @@ scene.add(meshContainer[0], meshContainer[1], meshContainer[2])
 
 const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(1,1,0)
-scene.add(directionalLight)
+var a = loader.load( '/assets/testCube.glb', function ( gltf ) {
+    scene.remove.apply(scene, scene.children);
+    gltf.scene.position.y =- objectsDistance * 3
+    scene.add( meshContainer[0], meshContainer[1], meshContainer[2], gltf.scene, directionalLight);
+    
+
+}, undefined, function ( error ) {
+
+    console.error( error );
+
+} );
+// scene.add(directionalLight)
 
 /**
  * Sizes
