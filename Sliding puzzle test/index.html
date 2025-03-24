@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dino tile swap</title>
+        <script src="scripts/pixi.js"></script>
+        <script src="scripts/tween.js"></script>
+    </head>
+    <body>
+        <script>
+        window.onload = function(){
+            var app = new PIXI.Application(640, 480, {backgroundColor : '#ff7777'});
+            document.body.appendChild(app.view);
+            
+            var style = new PIXI.TextStyle({
+                fontFamily: 'Arial',
+                fontSize: 36,
+                fontWeight: 'bold',
+                fill: ['#895129', '#ffffff'], // gradient
+                stroke: '#4a1850',
+                strokeThickness: 2
+            });
+
+            var infostyle = new PIXI.TextStyle({
+                fontFamily: 'Arial',
+                fontSize: 12,
+                fill: '#895129' // gradient
+            });
+
+            var infoText = new PIXI.Text("Rearrange the fossil pieces!", infostyle);
+            infoText.x = 320;
+            infoText.y = 50;
+            // center the text's anchor point
+            infoText.anchor.set(0.5);
+
+            app.stage.addChild(infoText);
+        
+            // create a new Sprite from an image path
+            var tile = PIXI.Sprite.from('8.jpg');
+            
+            var tileWidth = 70; //64 tile width + 6px gap
+            var numTiles = 9
+            var numCols = 3;
+            var tileStartX = 220;
+            var tileStartY = 100;
+            var tiles = [];
+            var positions = [];
+            var startPositions = [0,1,3,2,5,4,7,6,8];
+            var currentPosition = [];
+            var isTileMoving = false;
+            var blankTileIndex = 8;
+            var tileTweenTime = 15;
+
+            function debugTextLog(text) {
+                document.getElementById("debug").innerHTML = text;
+            }
+
+            function onTileClick() {
+                if(isTileMoving)
+                    return;
+
+                //debugTextLog("Clicked on tile "+this.index +" "+currentPosition[0]);
+                var tileIndex = this.index;
+
+                var currentTilePos = currentPosition[tileIndex];
+                var blankTilePos = currentPosition[blankTileIndex];
+
+                //Check if blank tile position is adjacent
+                var diff = Math.abs(currentTilePos-blankTilePos);
+
+                //If Blank Tile pos is near
+                if(diff==numCols || diff == 1){
+                    var tweenWithCallback1 = new Tween(this, "position.x", positions[blankTilePos].x, tileTweenTime, true);
+                    tweenWithCallback1.easing = Tween.outCubic;
+                    var tweenWithCallback2 = new Tween(this, "position.y", positions[blankTilePos].y, tileTweenTime, true);
+                    tweenWithCallback2.easing = Tween.outCubic;
+                    tweenWithCallback1.setOnComplete(onTweenComplete, this);
+
+                    //Swap Current Positions
+                    var tempPos = currentPosition[blankTileIndex];
+                    currentPosition[blankTileIndex] = currentPosition[tileIndex];
+                    currentPosition[tileIndex] = tempPos;
+
+                    isTileMoving = true;
+                }else {
+                    debugTextLog("Can't Move");
+                }
+            }
+
+            function checkForGameWin() {
+                var isGameWon = true;
+                for(var i=0; i<numTiles;i++){
+                    if(currentPosition[i] !== i){
+                        isGameWon = false;
+                        break;
+                    }
+                }
+                if(isGameWon){
+                    debugTextLog("Game Won. Cool");
+                }
+            }
+
+            function onTweenComplete(param) {
+                isTileMoving = false;
+
+                //To Generate First Random Array
+                /*var logText="";
+                for(var i=0; i<currentPosition.length;i++)
+                    logText += currentPosition[i]+",";
+                console.log(logText);*/
+
+                checkForGameWin();
+            }
+
+            function Point(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            //debugTextLog("Game Start. Arrange the Tiles in Order.");
+
+            for(var i=0; i<numTiles;i++){
+                var tileHolder = new PIXI.Container();
+                tileHolder.index = i;
+
+                let picName = i.toString();
+                let directory="assets/"
+                picName = directory.concat(picName,".png")
+                debugTextLog(picName);
+                var newtile = PIXI.Sprite.from('8.jpg');
+                tile.anchor.set(0.5);
+
+                var row = Math.floor(i/numCols);
+                var col = Math.floor(i%numCols);
+                tileHolder.x = tileStartX + col*tileWidth;
+                tileHolder.y = tileStartY + row*tileWidth;
+
+                var pt = new Point(tileHolder.x, tileHolder.y);
+                positions.push(pt);
+
+                currentPosition[i] = i ;
+
+                tileHolder.interactive = true;
+                tileHolder.buttonMode = true;
+
+                tileHolder.on('pointerdown', onTileClick);
+
+                var richText = new PIXI.Text(i+1, style);
+                richText.x = 32;
+                richText.y = 32;
+                // center the text's anchor point
+                richText.anchor.set(0.5);
+
+                tileHolder.addChild(newtile);
+                tileHolder.addChild(richText);
+
+                tiles.push(tileHolder);
+
+                if(i==(numTiles-1)){
+                    tileHolder.visible = false;
+                }
+
+                app.stage.addChild(tileHolder);
+            }
+
+            //Set Initial Random Setup
+            for(var i=0; i<numTiles;i++)
+            {
+                currentPosition[i] = startPositions[i];
+
+                var tilePos = startPositions[i];
+                tiles[i].x = positions[tilePos].x;
+                tiles[i].y = positions[tilePos].y;
+            }
+
+            // Listen for animate update
+            app.ticker.add(function(delta) {
+                Tween.runTweens();
+            });
+        }
+        </script>
+        <p id="debug"> Debug Log </p>
+    </body>
+</html>
