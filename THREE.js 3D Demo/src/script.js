@@ -96,7 +96,7 @@ const loader = new GLTFLoader();
 
 const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(1,1,0)
-var a = loader.load( '/assets/testCube.glb', function ( gltf ) {
+var a = loader.load( '/assets/jaw.glb', function ( gltf ) {
     scene.remove.apply(scene, scene.children);
     gltf.scene.position.y =- objectsDistance * 3
     scene.add( meshContainer[0], meshContainer[1], meshContainer[2], gltf.scene, directionalLight);
