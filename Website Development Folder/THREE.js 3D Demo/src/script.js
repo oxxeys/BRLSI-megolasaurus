@@ -64,9 +64,9 @@ meshContainer.push(new THREE.Mesh(
     material
 ))
 
-meshContainer[0].position.y = - objectsDistance * 0.25
-meshContainer[1].position.y = - objectsDistance * 1
-meshContainer[2].position.y = - objectsDistance * 2
+meshContainer[0].position.y = - objectsDistance * 10.25
+meshContainer[1].position.y = - objectsDistance * 10
+meshContainer[2].position.y = - objectsDistance * 20
 
 meshContainer[0].position.x = 2
 meshContainer[1].position.x = - 2

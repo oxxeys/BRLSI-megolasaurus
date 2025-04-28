@@ -18,7 +18,7 @@ html{
 }
 
 
-.section
+.TitleSection
 {
     display: flex;
     align-items: center;
@@ -37,12 +37,72 @@ section:nth-child(odd)
     justify-content: flex-end;
 }
 
+.MainContentContainer{
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+}
+
+.SectionContentContainer{
+    display: flex ;
+    flex-direction: column;
+    width: 60%;
+}
+
+.AsideContentContainer{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    width:20% ;
+    height: 100%;
+    background-color: aqua;
+
+    background:green;
+    height: 100%;
+    width: 50%;
+}
+.elevator{
+    width:20% ;
+    height: 100vw;
+}
+
+
 .container {
     height: 100vh;
     background: #1b1b1b;
     padding-bottom: 50vh;
     padding-top: 50vh;
   }
+
+  .HoleBackground{
+    position: absolute;
+  }
+
+
+  #SectionOneTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #SectionOne{
+    position: relative;
+  }
+  #TitleSectionOne{
+    position: relative;
+    font-size: 3rem;
+  }
+  #SectionOneContentOne{
+    position: relative;
+    font-size: 2rem;
+  }
+  #SectionOneContentTwo{
+    position: relative;
+    font-size: 2rem;
+  }
+
+
+
 
   #archeologist{
     z-index: 1;
