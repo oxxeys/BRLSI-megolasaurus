@@ -1,152 +1,217 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    color: azure;
+* {
+  margin: 0;
+  padding: 0;
+  color: azure;
 }
 
-:root{
-   --font: 'Cabin', sans-serif;
+:root {
+  --font: 'Cabin', sans-serif;
+  --paddingTop: 50px;
+
+  /* Colours */
+  --DirtOne: #6B440E;
+  --DirtTwo: #3F2807;
+  --DirtThree: #391704;
+  --DirtFour: #240E02;
+  --DirtFive: #1A0C04;
 }
 
-html{
-    background: #041b01;
+html {
+  background: #041b01;
 }
 
-.webgl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
+/* Hero Section Styling */
 
-#TitleSection
-{
-    height: 100vh;
-    font-family: var(--font);
-    background-image: url("./assets/HeroBackground.png");
+#TitleSection {
+  height: 100vh;
+  font-family: var(--font);
+  background-image: url("./assets/HeroBackground.png");
 }
 
-.logo{
-  width: 32px; 
+.logo {
+  width: 32px;
   height: 32px;
   justify-self: end;
 }
 
-#logoContainer{
+#logoContainer {
   padding: 2% 0 0 2%;
 }
 
-#TitleContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#TitleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    /* https://www.w3schools.com/css/css_align.asp */
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    
+  /* https://www.w3schools.com/css/css_align.asp */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
 }
 
-#title{
-text-transform: uppercase;
-text-align: center;
-font-size: 2rem;
-margin: 16px 2vw 16px 2vw;
-padding: 1rem 0.5rem 0px 0.5rem;
+#title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  margin: 16px 2vw 16px 2vw;
+  padding: 1rem 0.5rem 0px 0.5rem;
 }
 
-#subtitle{
+#subtitle {
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem 0.5rem 0px 0.5rem;
 }
 
+#intro {
+  /* height: 50vh; */
+  padding: 16px;
+  text-align: center;
+  max-width: 60ch;
 
+  margin: auto;
+  width: 90%;
+  padding-top: var(--paddingTop);
 
-
-.MainContentContainer{
-    display: flex ;
-    flex-direction: row;
-    align-items: center;
 }
 
-.SectionContentContainer{
-    display: flex ;
-    flex-direction: column;
-    width: 60%;
+#introBox {
+  fill: #95C0A8;
+  width: 75vw;
+  flex-shrink: 0;
+  position: absolute;
+  z-index: -1;
+
+  width: 300px;
+  height: 150px;
+  resize: both;
+  overflow: auto;
 }
 
-.AsideContentContainer{
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    width:20% ;
-    height: 100%;
-    background-color: aqua;
-
-    background:green;
-    height: 100%;
-    width: 50%;
+/*  */
+#introBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--paddingTop);
 }
-.elevator{
-    width:20% ;
-    height: 100vw;
+
+.archeologist {
+  width: 50px;
+  height: 50px;
+}
+
+.MainContentContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: var(--paddingTop);
+}
+
+.SectionContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 80%;
+}
+
+.AsideContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 20%;
+  height: auto;
+  background: rgb(144, 111, 34);
+  max-width: 100px;
+}
+
+.elevator {
+  width: 100%;
 }
 
 
 .container {
-    height: 100vh;
-    background: #1b1b1b;
-    padding-bottom: 50vh;
-    padding-top: 50vh;
-  }
-
-  .HoleBackground{
-    position: absolute;
-  }
-
-
-  #SectionOneTitleContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #SectionOne{
-    position: relative;
-  }
-  #TitleSectionOne{
-    position: relative;
-    font-size: 3rem;
-  }
-  #SectionOneContentOne{
-    position: relative;
-    font-size: 1rem;
-  }
-  #SectionOneContentTwo{
-    position: relative;
-    font-size: 1rem;
-  }
-
-
-
-
-  #archeologist{
-    z-index: 1;
-    margin: 0;
-    position: relative;
-    transform-origin: center;
+  height: 100vh;
+  background: #1b1b1b;
+  padding-bottom: 50vh;
+  padding-top: 50vh;
 }
 
-#green{
+.HoleBackground {
+  position: absolute;
+}
+
+.Section {
+  position: relative;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#SectionOne {
+  background: var(--DirtOne);
+}
+
+#SectionOneTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#TitleSectionOne {
+  position: relative;
+  font-size: 3rem;
+}
+
+#SectionOneContentOne {
+  position: relative;
+  font-size: 1rem;
+}
+
+#SectionOneContentTwo {
+  position: relative;
+  font-size: 1rem;
+}
+
+
+#SectionTwo {
+  background: var(--DirtTwo);
+}
+
+#SectionThree {
+  background: var(--DirtThree);
+}
+
+#SectionFour {
+  background: var(--DirtFour);
+}
+
+#SectionFive {
+  background: var(--DirtFive);
+}
+
+
+
+
+#archeologist {
+  z-index: 1;
+  margin: 0;
+  position: relative;
+  transform-origin: center;
+}
+
+#green {
   background-color: #2b6b30;
 }
