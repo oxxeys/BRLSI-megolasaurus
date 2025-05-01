@@ -5,6 +5,10 @@
     color: azure;
 }
 
+:root{
+   --font: 'Cabin', sans-serif;
+}
+
 html{
     background: #041b01;
 }
@@ -18,24 +22,56 @@ html{
 }
 
 
-.TitleSection
+#TitleSection
 {
-    display: flex;
-    align-items: center;
     height: 100vh;
-    position: relative;
-    font-family: 'Cabin', sans-serif;
-    color: #ffeded;
-    text-transform: uppercase;
-    font-size: 7vmin;
-    padding-left: 10%;
-    padding-right: 10%;
+    font-family: var(--font);
+    background-image: url("./assets/HeroBackground.png");
 }
 
-section:nth-child(odd)
-{
-    justify-content: flex-end;
+.logo{
+  width: 32px; 
+  height: 32px;
+  justify-self: end;
 }
+
+#logoContainer{
+  padding: 2% 0 0 2%;
+}
+
+#TitleContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* https://www.w3schools.com/css/css_align.asp */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+}
+
+#title{
+text-transform: uppercase;
+text-align: center;
+font-size: 2rem;
+margin: 16px 2vw 16px 2vw;
+padding: 1rem 0.5rem 0px 0.5rem;
+}
+
+#subtitle{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem 0px 0.5rem;
+}
+
+
+
 
 .MainContentContainer{
     display: flex ;
@@ -94,11 +130,11 @@ section:nth-child(odd)
   }
   #SectionOneContentOne{
     position: relative;
-    font-size: 2rem;
+    font-size: 1rem;
   }
   #SectionOneContentTwo{
     position: relative;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
 

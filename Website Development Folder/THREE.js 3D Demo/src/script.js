@@ -3,13 +3,12 @@ import GUI from 'lil-gui'
 import { MarchingCubes } from 'three/examples/jsm/Addons.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-//got to 37.16
 
 
 /**
  * Debug
  */
-const gui = new GUI()
+//const gui = new GUI()
 
 const parameters = {
     materialColor: '#ffeded'
