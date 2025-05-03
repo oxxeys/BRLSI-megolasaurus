@@ -124,6 +124,7 @@ html {
   display: flex;
   flex-direction: column;
   flex: 80%;
+  
 }
 
 .AsideContentContainer {
@@ -168,6 +169,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: var(--paddingTop);
 }
 
 #TitleSectionOne {
@@ -214,4 +216,33 @@ html {
 
 #green {
   background-color: #2b6b30;
+}
+
+@media screen and (min-width: 375px) {
+
+  :root {
+    --paddingTop: 140px;
+  }
+
+  body {
+    .HoleBackground {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  :root {
+    --paddingTop: 200px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  :root {
+    --paddingTop: 30vw;
+  }
+
 }
