@@ -281,7 +281,7 @@ html {
   }
 
   #SectionThreeTitle {
-    grid-column: 2 / span 4;
+    grid-column: 5 / span 1;
     grid-row: 1 / span 1;
   }
 
@@ -294,6 +294,7 @@ html {
   #SectionThreeContentTwo {
     grid-column: 2 / span 4;
     grid-row: 3/ span 1;
+    
   }
 
   #SectionThreeContentThree {
@@ -325,28 +326,28 @@ html {
     font-size: 1.25rem;
   }
 
-  #SectionTwoTitle {
+  #SectionFourTitle {
     grid-column: 2 / span 4;
     grid-row: 1 / span 1;
   }
 
-  #SectionTwoContentOne {
+  #SectionFourContentOne {
     position: relative;
     grid-column: 2 / span 4;
     grid-row: 2 / span 1;
   }
 
-  #SectionTwoContentTwo {
+  #SectionFourContentTwo {
     grid-column: 2 / span 4;
     grid-row: 3/ span 1;
   }
 
-  #SectionTwoContentThree {
+  #SectionFourContentThree {
     grid-column: 2 / 6;
     grid-row: 4 / span 1;
   }
 
-  #SecondGame {
+  #FourthGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
   }
@@ -370,28 +371,28 @@ html {
     font-size: 1.25rem;
   }
 
-  #SectionTwoTitle {
+  #SectionFiveTitle {
     grid-column: 2 / span 4;
     grid-row: 1 / span 1;
   }
 
-  #SectionTwoContentOne {
+  #SectionFiveContentOne {
     position: relative;
     grid-column: 2 / span 4;
     grid-row: 2 / span 1;
   }
 
-  #SectionTwoContentTwo {
+  #SectionFiveContentTwo {
     grid-column: 2 / span 4;
     grid-row: 3/ span 1;
   }
 
-  #SectionTwoContentThree {
+  #SectionFiveContentThree {
     grid-column: 2 / 6;
     grid-row: 4 / span 1;
   }
 
-  #SecondGame {
+  #FifthGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
   }
