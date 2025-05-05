@@ -8,6 +8,8 @@
   --font: 'Cabin', sans-serif;
   --paddingTop: 50px;
 
+  --minWidth: 900;
+
   /* Colours */
   --DirtOne: #6B440E;
   --DirtTwo: #3F2807;
@@ -124,7 +126,7 @@ html {
   display: flex;
   flex-direction: column;
   flex: 80%;
-  
+  justify-content: space-around;
 }
 
 .AsideContentContainer {
@@ -156,6 +158,7 @@ html {
 .Section {
   position: relative;
   height: 150vh;
+  min-height: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,49 +166,237 @@ html {
 
 #SectionOne {
   background: var(--DirtOne);
-}
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
 
-#SectionOneTitleContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: var(--paddingTop);
-}
+  padding: 0 5vw;
+  text-align: center;
 
-#TitleSectionOne {
-  position: relative;
-  font-size: 3rem;
-}
 
-#SectionOneContentOne {
-  position: relative;
-  font-size: 1rem;
-}
+  #SectionOneTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-#SectionOneContentTwo {
-  position: relative;
-  font-size: 1rem;
-}
+  }
 
+  #TitleSectionOne {
+    position: relative;
+    font-size: 1.25rem;
+  }
+
+  #SectionOneTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  #SectionOneContentOne {
+    position: relative;
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+  }
+
+  #SectionOneContentTwo {
+    grid-column: 2 / span 4;
+    grid-row: 3/ span 1;
+  }
+
+  #SectionOneContentThree {
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+  }
+
+  #FirstGame {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 1;
+  }
+}
 
 #SectionTwo {
   background: var(--DirtTwo);
+  display: grid;
+   
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 5vw;
+  text-align: center;
+
+  #TitleSectionTwo {
+    position: relative;
+    font-size: 1.25rem;
+  }
+
+  #SectionTwoTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  #SectionTwoContentOne {
+    position: relative;
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  #SectionTwoContentTwo {
+    grid-column: 5 / span 1;
+    grid-row: 3/ span 1;
+  }
+
+  #SectionTwoContentThree {
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+  }
+
+  #SecondGame {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 1;
+  }
+
 }
 
 #SectionThree {
   background: var(--DirtThree);
+  display: grid;
+  justify-items: center;
+  height: 100%;
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+
+  padding: 0 5vw;
+  text-align: center;
+
+  #TitleSectionThree {
+    position: relative;
+    font-size: 1.25rem;
+  }
+
+  #SectionThreeTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  #SectionThreeContentOne {
+    position: relative;
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+  }
+
+  #SectionThreeContentTwo {
+    grid-column: 2 / span 4;
+    grid-row: 3/ span 1;
+  }
+
+  #SectionThreeContentThree {
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+  }
+
+  #ThirdGame {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 1;
+  }
+
 }
 
 #SectionFour {
   background: var(--DirtFour);
+  display: grid;
+  justify-items: center;
+  height: 100%;
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+
+  padding: 0 5vw;
+  text-align: center;
+
+  #TitleSectionFour {
+    position: relative;
+    font-size: 1.25rem;
+  }
+
+  #SectionTwoTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  #SectionTwoContentOne {
+    position: relative;
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+  }
+
+  #SectionTwoContentTwo {
+    grid-column: 2 / span 4;
+    grid-row: 3/ span 1;
+  }
+
+  #SectionTwoContentThree {
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+  }
+
+  #SecondGame {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 1;
+  }
+
 }
 
 #SectionFive {
   background: var(--DirtFive);
+  display: grid;
+  justify-items: center;
+  height: 100%;
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+
+  padding: 0 5vw;
+  text-align: center;
+
+  #TitleSectionFive {
+    position: relative;
+    font-size: 1.25rem;
+  }
+
+  #SectionTwoTitle {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  #SectionTwoContentOne {
+    position: relative;
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+  }
+
+  #SectionTwoContentTwo {
+    grid-column: 2 / span 4;
+    grid-row: 3/ span 1;
+  }
+
+  #SectionTwoContentThree {
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+  }
+
+  #SecondGame {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 1;
+  }
+
 }
-
-
-
 
 #archeologist {
   z-index: 1;
