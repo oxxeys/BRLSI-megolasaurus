@@ -33,9 +33,10 @@ html {
 /* Hero Section Styling */
 
 #TitleSection {
-  height: 100vh;
+  height: 1000vh;
   font-family: var(--font);
   background-image: url("./assets/HeroBackground.jpg");
+
 }
 
 .logo {
