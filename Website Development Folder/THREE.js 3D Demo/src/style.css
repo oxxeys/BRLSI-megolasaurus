@@ -35,7 +35,7 @@ html {
 #TitleSection {
   height: 100vh;
   font-family: var(--font);
-  background-image: url("./assets/HeroBackground.png");
+  background-image: url("./assets/HeroBackground.jpg");
 }
 
 .logo {
