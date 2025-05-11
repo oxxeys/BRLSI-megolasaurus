@@ -291,7 +291,7 @@ html {
   }
 
   #SectionThreeTitle {
-    grid-column: 5 / span 1;
+    grid-column: 4 / span 1;
     grid-row: 1 / span 1;
   }
 
@@ -443,6 +443,62 @@ html {
   :root {
     --paddingTop: 200px;
   }
+
+  svg{
+    width: 70%;
+    height: 70%;
+  }
+
+  #SectionOne {
+    grid-template-columns:repeat(3, 1fr);
+    padding: 10px;
+    #SectionOneTitle {
+        grid-column: 1 / span 3;
+    }
+    #SectionOneContentOne{
+      grid-column: 1 / span 1;
+    }
+    #SectionOneContentTwo{
+      grid-column: 2 / span 1;
+    }
+    #SectionOneContentThree{
+      grid-column: 3 / span 1;
+    }
+    #FirstGame{
+      grid-column: 1 / span 3;
+    }
+  }
+    #SectionTwo {
+    grid-template-columns:repeat(6, 1fr);
+    padding: 0;
+
+        #SectionTwoContentOne {
+          width: 100%;
+          height: 100%;
+        }
+        #SectionTwoContentTwo {
+          width: 250%;
+          height: 250%;
+        }
+  }
+    #SectionThree{
+    grid-template-columns:repeat(6, 1fr);
+    padding: 0;
+
+    #SectionThreeTitle {
+        grid-column: 3 / span 3;
+    }
+
+  }
+    #SectionFour {
+    grid-template-columns:repeat(6, 1fr);
+    padding: 0;
+  }
+    #SectionFive {
+    grid-template-columns:repeat(6, 1fr);
+    padding: 0;
+  }
+
 
 }
 
