@@ -183,7 +183,7 @@ html {
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
-  padding: 0 5vw;
+  padding: 20px 5vw;
   text-align: center;
 
 
@@ -237,7 +237,7 @@ html {
   align-items: center;
 
   height: 100%;
-  padding: 0 5vw;
+  padding: 20px 5vw;
   text-align: center;
 
   #TitleSectionTwo {
@@ -282,7 +282,7 @@ html {
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
-  padding: 0 5vw;
+  padding: 20px 5vw;
   text-align: center;
 
   #TitleSectionThree {
@@ -328,7 +328,7 @@ html {
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
-  padding: 0 5vw;
+  padding: 20px 5vw;
   text-align: center;
 
   #TitleSectionFour {
@@ -378,7 +378,7 @@ html {
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
-  padding: 0 5vw;
+  padding: 20px 5vw;
   text-align: center;
 
   #TitleSectionFive {
@@ -429,7 +429,27 @@ html {
   .SectionContentContainer {
     max-width: 80vw;
   }
+  #SectionOne{
+grid-template-columns:repeat(3, 1fr);
+    #SectionOneTitle {
+        grid-column: 1 / span 1;
+    }
+    #SectionOneContentOne{
+      grid-column: 1 / span 1;
+    }
+    #SectionOneContentTwo{
+      grid-column: 1 / span 1;
+    }
+    #SectionOneContentThree{
+      grid-column: 1 / span 1;
+    }
+    #FirstGame{
+      grid-column: 1 / span 3;
+    }
+  }
 }
+
+
 
 @media screen and (min-width: 375px) {
 
