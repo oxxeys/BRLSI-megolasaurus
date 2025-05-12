@@ -51,8 +51,8 @@ html {
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 10vw;
+  height: 10vh;
   justify-self: end;
 }
 
@@ -186,6 +186,10 @@ html {
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
+  background: url("./assets/background\ test.jpg");
+  background-size: cover;
+  background-position: center;
+
   padding: 20px 5vw;
   text-align: center;
 
@@ -243,6 +247,10 @@ html {
   padding: 20px 5vw;
   text-align: center;
 
+  background: url("./assets/background\ test.jpg");
+  background-size: cover;
+  background-position: center;
+
   #TitleSectionTwo {
     position: relative;
     font-size: 1.25rem;
@@ -287,6 +295,10 @@ html {
 
   padding: 20px 5vw;
   text-align: center;
+
+  background: url("./assets/background\ test.jpg");
+  background-size: cover;
+  background-position: center;
 
   #TitleSectionThree {
     position: relative;
@@ -333,6 +345,10 @@ html {
 
   padding: 20px 5vw;
   text-align: center;
+
+  background: url("./assets/background\ test.jpg");
+  background-size: cover;
+  background-position: center;
 
   #TitleSectionFour {
     position: relative;
@@ -383,6 +399,10 @@ html {
 
   padding: 20px 5vw;
   text-align: center;
+
+  background: url("./assets/background\ test.jpg");
+  background-size: cover;
+  background-position: center;
 
   #TitleSectionFive {
     position: relative;
