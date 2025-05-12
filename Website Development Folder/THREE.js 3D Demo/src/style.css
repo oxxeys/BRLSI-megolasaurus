@@ -45,6 +45,9 @@ html {
   height: 100vh;
   font-family: var(--font);
   background-image: url("./assets/HeroBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .logo {
