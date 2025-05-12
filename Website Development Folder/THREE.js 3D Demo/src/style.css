@@ -553,4 +553,8 @@ grid-template-columns:repeat(3, 1fr);
     --paddingTop: 30vw;
   }
 
+  #intro{
+    font-size: 2rem;
+  }
+
 }
