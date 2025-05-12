@@ -14,12 +14,6 @@ const parameters = {
     materialColor: '#ffeded'
 }
 
-gui
-    .addColor(parameters, 'materialColor')
-    .onChange(() =>
-    {
-        material.color.set(parameters.materialColor)
-    })
 
 /**
  * Base
@@ -45,7 +39,7 @@ gradientTexture.magFilter = THREE.NearestFilter
 const objectsDistance = 4
 const meshContainer = [];
 const material = new THREE.MeshToonMaterial({ 
-    color: parameters.meshContainer,
+    color: "#ffffff",
     gradientMap: gradientTexture
 
 })
@@ -98,7 +92,7 @@ directionalLight.position.set(1,1,0)
 var a = loader.load( '/assets/jaw.glb', function ( gltf ) {
     scene.remove.apply(scene, scene.children);
     
-    gltf.scene.position.y =- objectsDistance * 3
+    gltf.scene.position.y =- objectsDistance * 1.5
 
     scene.add( meshContainer[0], meshContainer[1], meshContainer[2], gltf.scene, directionalLight);
     

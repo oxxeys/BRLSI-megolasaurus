@@ -425,10 +425,29 @@ html {
   background-color: #2b6b30;
 }
 
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  .SectionContentContainer {
+    max-width: 80vw;
+  }
+}
+
 @media screen and (min-width: 375px) {
 
   :root {
     --paddingTop: 140px;
+  }
+  #SectionOne {
+    grid-template-columns:repeat(3, 1fr);
+  }#SectionTwo {
+    #SectionTwoTitle {
+        grid-column: 5 / span 1;
+    }
+  }#SectionThree {
+    grid-template-columns:repeat(3, 1fr);
+  }#SectionFour {
+    grid-template-columns:repeat(3, 1fr);
+  }#SectionFive {
+    grid-template-columns:repeat(3, 1fr);
   }
 
   body {
@@ -471,7 +490,10 @@ html {
     #SectionTwo {
     grid-template-columns:repeat(6, 1fr);
     padding: 0;
-
+        #SectionTwoTitle {
+           
+            grid-column: 2 / span 4;
+        }
         #SectionTwoContentOne {
           width: 100%;
           height: 100%;

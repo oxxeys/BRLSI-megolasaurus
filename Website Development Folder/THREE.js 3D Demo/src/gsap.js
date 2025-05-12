@@ -3,9 +3,9 @@ gsap.registerPlugin(ScrollTrigger)
 let width = window.innerWidth * 0.8
 window.addEventListener('resize', function (event) {
     width = window.innerWidth  * 0.8
-    console.log(window.innerWidth)
+    //console.log(window.innerWidth)
 }, true);
-console.log(window.innerWidth)
+//console.log(window.innerWidth)
 
 // gsap.set("#archeologist", {transformOrigin: "50vw",})
 // gsap.to("#archeologist", {
