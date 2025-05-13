@@ -43,16 +43,20 @@ async function preloadImages() {
 
 let app;
 
+
 (async () => {
 
     app = new Application();
     await app.init({
         backgroundAlpha:0.3
+
     });
 
         document.getElementById("FirstGame").appendChild(app.canvas);
 
     await preloadImages();
+
+    resize();
 
     var questionNo = 0;
     const questions = ["Which mythical creature could this bone belong to?", "Which real life creature could this belong to?"];

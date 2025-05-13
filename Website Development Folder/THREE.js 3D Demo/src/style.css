@@ -256,7 +256,7 @@ html {
    #FirstGame {
     grid-column: 1 / span 6;
     grid-row: 6 / span 1;
-    height:40vh;
+    height:60vh;
     width: 80%;
   }
 
