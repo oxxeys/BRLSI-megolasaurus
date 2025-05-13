@@ -442,6 +442,8 @@ html {
   #FourthGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
+    height: 60vh;
+    width: 80%;
   }
 
 }
