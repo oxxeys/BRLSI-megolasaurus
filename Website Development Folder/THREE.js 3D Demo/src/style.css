@@ -658,8 +658,13 @@ html {
 
   #SectionFour {
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     padding: 0;
+  
+   #SectionFourContentFour {
+    grid-row: 7 / span 1;
   }
+}
 
   #SectionFive {
     grid-template-columns: repeat(6, 1fr);
