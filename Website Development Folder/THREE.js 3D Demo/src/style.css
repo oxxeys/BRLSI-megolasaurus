@@ -110,8 +110,12 @@ html {
 }
 
 #introText{
-  padding-top: var(--paddingTop);
-  margin: 0 20%;
+  margin: var(--paddingTop) 20%;
+  
+}
+#introText, #introTextTwo{
+  background-color: rgba(0,0,0,0.3);
+
 }
 
 #introBox {
@@ -682,8 +686,9 @@ html {
   }
 
   .logo{
-    width: 62px;
-    height: 62px;
+    width: 82px;
+    height: 82px;
+    padding: 0 10px;
   }
 
   
