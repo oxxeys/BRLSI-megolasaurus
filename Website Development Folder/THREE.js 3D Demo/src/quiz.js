@@ -44,13 +44,18 @@ async function preloadImages() {
 
     const app = new Application();
 
+
+    var container = document.getElementById( 'FirstGame' );
+    console.log(container.clientWidth)
+    console.log(container.clientHeight)
+
     await app.init({
-        width: 1000,
-        height: 800,
+        width: container.clientWidth,
+        height: container.clientHeight,
         backgroundColor: 0x964B00
     });
 
-    document.getElementById("FirstGame").appendChild(app.canvas);
+        document.getElementById("FirstGame").appendChild(app.canvas);
 
     await preloadImages();
 
@@ -263,3 +268,12 @@ async function preloadImages() {
     
 
 })();
+
+
+
+function onWindowResize() { // from https://github.com/mrdoob/three.js/blob/70cc4e192fe2ebd0bf8542a81c8c513d61984c58/examples/webgl_geometries.html#L134 - allows for responsive resize
+
+        // width: container.clientWidth,
+        // height: container.clientHeight,
+        
+}
