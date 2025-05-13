@@ -1,14 +1,15 @@
-console.log("Script loaded")
-
-import { Application, 
-    Graphics,
-    Container,
-    Text,
-    TextStyle,
-    Assets,
-    Sprite,
-    Texture
-} from "pixi.js";
+const {
+  Application,
+  Graphics,
+  Container,
+  Text,
+  TextStyle,
+  Assets,
+  Sprite,
+  Texture,
+  Ticker,
+  Rectangle,
+} = PIXI;
 
 let artifacts = [];
 let textures1 = [];
@@ -46,8 +47,7 @@ let app;
 
     app = new Application();
     await app.init({
-        width: 300,
-        height: 300,
+        backgroundAlpha:0.3
     });
 
         document.getElementById("FirstGame").appendChild(app.canvas);
