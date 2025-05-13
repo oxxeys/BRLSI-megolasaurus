@@ -28,8 +28,8 @@ async function preloadImages() {
         backgroundAlpha: 0.2
     });
     
-    document.getElementById("SecondGame").appendChild(app.canvas);
-    
+    document.getElementById("FourthGame").appendChild(app.canvas);
+    resize();
     await preloadImages();
 
     const baseTexture = Texture.from('assets/images/thigh.jpg').baseTexture;
