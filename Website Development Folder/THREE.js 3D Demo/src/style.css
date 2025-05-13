@@ -111,7 +111,7 @@ html {
 
 #introText{
   padding-top: var(--paddingTop);
-  margin: 0 200px;
+  margin: 0 20%;
 }
 
 #introBox {
@@ -125,6 +125,7 @@ html {
   height: 150px;
   resize: both;
   overflow: auto;
+  
 }
 
 /*  */
@@ -134,6 +135,8 @@ html {
   justify-content: center;
 
   flex-direction: column;
+
+  margin: 0 30%;
 }
 
 
@@ -202,7 +205,7 @@ html {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(6, 20px);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: 20px;
 
   background: url("./assets/backgroundOr.jpg");
@@ -666,6 +669,10 @@ html {
 #intro {
     font-size: 2rem;
   }
+.archeologist {
+  width: 322px;
+  height: 400px;
+}
 }
 
 @media screen and (min-width: 1024px) {
