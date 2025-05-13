@@ -1,188 +1,76 @@
-import * as THREE from 'three'
-import GUI from 'lil-gui'
-import { MarchingCubes } from 'three/examples/jsm/Addons.js'
+import * as THREE from 'three';
+import { OrbitControls } from "three/addons/controls/OrbitControls.js"; // controls for the 3d models
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
+var scene = new THREE.Scene(); // initialising the scene
+// scene.background = new THREE.Color( 0x035c88 );
 
-/**
- * Debug
- */
-//const gui = new GUI()
+var container = document.getElementById( 'jaw' );
+var camera = new THREE.PerspectiveCamera( 75, container.clientWidth/ container.clientHeight, 0.1, 1000 );
 
-const parameters = {
-    materialColor: '#ffeded'
-}
+var renderer = new THREE.WebGLRenderer( {alpha: true } );
 
+    renderer.setSize( container.clientWidth, container.clientHeight, true);
+    renderer.setAnimationLoop( animate );
+    container.appendChild( renderer.domElement );
+	renderer.setClearColor( 0x000000, 0); //0x035c88
 
-/**
- * Base
- */
-// Canvas
-const canvas = document.querySelector('canvas.webgl')
+//Adds light to be able to see 3d model
+const directionalLight = new THREE.DirectionalLight(0xffffff, 10, 200)
+directionalLight.position.set(1,1,1);
 
-// Scene
-const scene = new THREE.Scene()
+scene.add(directionalLight);
 
-/**
- * Obj
- */
-
-// Texture
-const textureLoader = new THREE.TextureLoader()
-const gradientTexture = textureLoader.load('textures/gradients/3.jpg')
-gradientTexture.magFilter = THREE.NearestFilter
-
-
-
-//Meshes
-const objectsDistance = 4
-const meshContainer = [];
-const material = new THREE.MeshToonMaterial({ 
-    color: "#ffffff",
-    gradientMap: gradientTexture
-
-})
-
-meshContainer.push(new THREE.Mesh(
-    new THREE.TorusGeometry(1, 0.4, 16, 60),
-    material
-))
-meshContainer.push(new THREE.Mesh(
-    new THREE.ConeGeometry(1, 2, 32),
-    material
-))
-meshContainer.push(new THREE.Mesh(
-    new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
-    material
-))
-
-meshContainer[0].position.y = - objectsDistance * 10.25
-meshContainer[1].position.y = - objectsDistance * 10
-meshContainer[2].position.y = - objectsDistance * 20
-
-meshContainer[0].position.x = 2
-meshContainer[1].position.x = - 2
-meshContainer[2].position.x = 2
-
+// load 3d model from files
 const loader = new GLTFLoader();
 
-// loader.load( 'path/to/model.glb', function ( gltf ) {
+loader.load( './assets/jaw.glb', function ( gltf ) { //expecting an error here when first loaded
 
-// 	scene.add( gltf.scene );
-
-// }, undefined, function ( error ) {
-
-// 	console.error( error );
-
-// } );
-
-
-
-//scene.add(meshContainer[0], meshContainer[1], meshContainer[2])
-
-
-
-
-
-// light
-
-const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
-directionalLight.position.set(1,1,0)
-var a = loader.load( '/assets/jaw.glb', function ( gltf ) {
-    scene.remove.apply(scene, scene.children);
-    
-    gltf.scene.position.y =- objectsDistance * 1.5
-
-    scene.add( meshContainer[0], meshContainer[1], meshContainer[2], gltf.scene, directionalLight);
-    
+	scene.add( gltf.scene );
 
 }, undefined, function ( error ) {
 
-    console.error( error );
+	console.error( "error" );
 
 } );
-// scene.add(directionalLight)
 
-/**
- * Sizes
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+//where camera is positioned - only needed in mobile (set before orbit controls)
+camera.position.z = 1;
+
+
+
+//allows for 3d model to be controlled
+ const controls = new OrbitControls( camera, renderer.domElement );
+ controls.enableDamping = true;
+ controls.target.set(0, 0, 0)
+
+
+ 
+//set camera position then update controls
+camera.position.set( 0, 0, 5 );
+
+controls.update();
+
+function animate() {
+
+	controls.update();
+
+	renderer.render( scene, camera );
+
+
+	directionalLight.position.copy( camera.position );
 }
 
-window.addEventListener('resize', () =>
-{
-    // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
+window.addEventListener( 'resize', onWindowResize );
 
-    // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
+function onWindowResize() { // from https://github.com/mrdoob/three.js/blob/70cc4e192fe2ebd0bf8542a81c8c513d61984c58/examples/webgl_geometries.html#L134 - allows for responsive resize
 
-    // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
+	camera.aspect = container.clientWidth / container.clientHeight;
+	camera.updateProjectionMatrix();
 
-/**
- * Camera
- */
-// Base camera
-const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
-camera.position.z = 6
-scene.add(camera)
-
-/**
- * Renderer
- */
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    alpha: true
-})
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
-//scroll
-let scrollY = window.scrollY
-
-window.addEventListener('scroll', () => {
-    scrollY = window.scrollY
-})
-
-
-
-/**
- * Animate
- */
-const clock = new THREE.Clock()
-
-const tick = () =>
-{
-    const elapsedTime = clock.getElapsedTime()
-
-    //animate camera
-    camera.position.y = - scrollY / sizes.height * objectsDistance
-
-
-    meshContainer[0].position.x = - scrollY / sizes.height  * 1.5 * objectsDistance + 2
-    if(scrollY > 560){
-        meshContainer[1].position.x = scrollY / sizes.height  * 1.5 * objectsDistance - 8
-    } 
-    
-    //
-    for(const mesh of meshContainer){
-        mesh.rotation.x = elapsedTime * 0.1
-        mesh.rotation.y = elapsedTime * 0.12
-    }
-
-    // Render
-    renderer.render(scene, camera)
-
-    // Call tick again on the next frame
-    window.requestAnimationFrame(tick)
+	renderer.setSize( container.clientWidth, container.clientHeight );
+	
 }
 
-tick()
+

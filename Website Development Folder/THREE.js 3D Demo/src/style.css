@@ -51,8 +51,8 @@ html {
 }
 
 .logo {
-  width: 10vw;
-  height: 10vh;
+  width: 32px;
+  height: 32px;
   justify-self: end;
 }
 
@@ -148,12 +148,17 @@ html {
   align-items: center;
   flex: 20%;
   height: auto;
-  background: rgb(144, 111, 34);
+  background: rgb(144, 111, 34); 
   max-width: 100px;
+  background-image: url("./assets/Elevator-Tile.png");
+  background-size: cover;
+  background-position: center;
+
 }
 
 .elevator {
   width: 100%;
+  
 }
 
 
@@ -175,6 +180,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 #SectionOne {
@@ -183,7 +189,7 @@ html {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(6, 20px);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 20px;
 
   background: url("./assets/backgroundOr.jpg");
@@ -227,16 +233,31 @@ html {
     grid-row: 4 / span 1;
   }
 
-  #FirstGame {
+  /* #FirstGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
+  } */
+
+  #skull {
+
+  width: 80%;
+  height: 70vh;
+  top: 120px;
+  z-index: 0;
+  margin-top: 5px;
+  border: #1A0C04;
+  border-style: solid;
+  border-width: 1px;
+  grid-column: 1 / span 6;
+  grid-row: 5 / span 1;
   }
+  
 }
 
 #SectionTwo {
   background: var(--DirtTwo);
   display: grid;
-   
+
   grid-template-columns: repeat(6, 20px);
   grid-template-rows: repeat(6, 1fr);
   gap: 20px;
@@ -277,9 +298,24 @@ html {
     grid-row: 4 / span 1;
   }
 
-  #SecondGame {
+  /* #SecondGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
+  } */
+
+  #jaw {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 70vh;
+  top: 120px;
+  z-index: 0;
+  margin-top: 5px;
+  border: #1A0C04;
+  border-style: solid;
+  border-width: 1px;
+  grid-column: 1 / span 6;
+  grid-row: 5 / span 1;
   }
 
 }
@@ -319,7 +355,7 @@ html {
   #SectionThreeContentTwo {
     grid-column: 2 / span 4;
     grid-row: 3/ span 1;
-    
+
   }
 
   #SectionThreeContentThree {
@@ -374,9 +410,9 @@ html {
   #SectionFourContentThree {
     grid-column: 2 / 5;
     grid-row: 4 / span 1;
-  } 
+  }
 
-  #SectionFourContentFour{
+  #SectionFourContentFour {
     grid-column: 2 / 6;
     grid-row: 6 / span 1;
   }
@@ -452,23 +488,37 @@ html {
   .SectionContentContainer {
     max-width: 80vw;
   }
-  #SectionOne{
-grid-template-columns:repeat(3, 1fr);
+
+  #SectionOne {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(4, 1fr) ;
+
     #SectionOneTitle {
-        grid-column: 1 / span 1;
-    }
-    #SectionOneContentOne{
       grid-column: 1 / span 1;
     }
-    #SectionOneContentTwo{
+
+    #SectionOneContentOne {
       grid-column: 1 / span 1;
     }
-    #SectionOneContentThree{
+
+    #SectionOneContentTwo {
       grid-column: 1 / span 1;
+
     }
-    #FirstGame{
+
+    #SectionOneContentThree {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
+    }
+
+    #FirstGame {
       grid-column: 1 / span 3;
     }
+
+  }
+
+  #skull{
+    display: none;
   }
 }
 
@@ -479,18 +529,27 @@ grid-template-columns:repeat(3, 1fr);
   :root {
     --paddingTop: 140px;
   }
+
   #SectionOne {
-    grid-template-columns:repeat(3, 1fr);
-  }#SectionTwo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #SectionTwo {
     #SectionTwoTitle {
-        grid-column: 5 / span 1;
+      grid-column: 5 / span 1;
     }
-  }#SectionThree {
-    grid-template-columns:repeat(3, 1fr);
-  }#SectionFour {
-    grid-template-columns:repeat(3, 1fr);
-  }#SectionFive {
-    grid-template-columns:repeat(3, 1fr);
+  }
+
+  #SectionThree {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #SectionFour {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #SectionFive {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   body {
@@ -506,64 +565,82 @@ grid-template-columns:repeat(3, 1fr);
     --paddingTop: 200px;
   }
 
-  svg{
-    width: 70%;
-    height: 70%;
+  svg {
+    width: 80%;
+    height: 80%;
   }
 
   #SectionOne {
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 10px;
+
     #SectionOneTitle {
-        grid-column: 1 / span 3;
+      grid-column: 1 / span 3;
     }
-    #SectionOneContentOne{
+
+    #SectionOneContentOne {
       grid-column: 1 / span 1;
     }
-    #SectionOneContentTwo{
+
+    #SectionOneContentTwo {
       grid-column: 2 / span 1;
     }
-    #SectionOneContentThree{
+
+    #SectionOneContentThree {
       grid-column: 3 / span 1;
     }
-    #FirstGame{
+
+    #FirstGame {
       grid-column: 1 / span 3;
     }
   }
-    #SectionTwo {
-    grid-template-columns:repeat(6, 1fr);
+
+  #SectionTwo {
+    grid-template-columns: repeat(6, 1fr);
     padding: 0;
-        #SectionTwoTitle {
-           
-            grid-column: 2 / span 4;
-        }
-        #SectionTwoContentOne {
-          width: 100%;
-          height: 100%;
-        }
-        #SectionTwoContentTwo {
-          width: 250%;
-          height: 250%;
-        }
+
+    #SectionTwoTitle {
+
+      grid-column: 2 / span 4;
+    }
+
+
+    #SectionTwoContentOne {
+      width: 100%;
+      height: 100%;
+    }
+
+    #SectionTwoContentTwo {
+      width: 250%;
+      height: 250%;
+    }
   }
-    #SectionThree{
-    grid-template-columns:repeat(6, 1fr);
+
+  #SectionThree {
+    grid-template-columns: repeat(6, 1fr);
     padding: 0;
 
     #SectionThreeTitle {
-        grid-column: 3 / span 3;
+      grid-column: 3 / span 3;
+      height: 150%;
+      width: 150%;
     }
+  }
 
-  }
-    #SectionFour {
-    grid-template-columns:repeat(6, 1fr);
-    padding: 0;
-  }
-    #SectionFive {
-    grid-template-columns:repeat(6, 1fr);
+  #SectionFour {
+    grid-template-columns: repeat(6, 1fr);
     padding: 0;
   }
 
+  #SectionFive {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0;
+  }
+
+  .logo{
+    width: 48px;
+    height: 48px;
+  }
 
 }
 
@@ -573,8 +650,14 @@ grid-template-columns:repeat(3, 1fr);
     --paddingTop: 30vw;
   }
 
-  #intro{
+  .logo{
+    width: 62px;
+    height: 62px;
+  }
+
+  #intro {
     font-size: 2rem;
   }
 
+  
 }
