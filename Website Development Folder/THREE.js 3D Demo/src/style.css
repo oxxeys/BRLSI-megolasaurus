@@ -233,10 +233,12 @@ html {
     grid-row: 4 / span 1;
   }
 
-  /* #FirstGame {
+   #FirstGame {
     grid-column: 1 / span 6;
-    grid-row: 5 / span 1;
-  } */
+    grid-row: 6 / span 1;
+    height:40vh;
+    width: 80%;
+  }
 
   #skull {
 
@@ -513,6 +515,7 @@ html {
 
     #FirstGame {
       grid-column: 1 / span 3;
+      
     }
 
   }
