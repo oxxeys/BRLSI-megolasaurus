@@ -15,7 +15,7 @@
 
 :root {
   --font: 'Cabin', sans-serif;
-  --paddingTop: 50px;
+  --paddingTop: 40%;
 
   --minWidth: 900;
 
@@ -94,13 +94,22 @@ html {
 
 
 #intro {
-  background: url('./assets/backgroundMainOr.jpg') no-repeat center center;
+  background: url('./assets/backgroundMainOr.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-size: cover;
   padding: 16px;
   text-align: center;
-  width: 100vw;
   height: 100vh; /* or set a specific height */
   margin: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#introText{
+  padding-top: var(--paddingTop);
 }
 
 #introBox {
@@ -121,10 +130,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: var(--paddingTop);
   
-
+  flex-direction: column;
 }
+
+
 
 .archeologist {
   width: 50px;
@@ -134,7 +144,6 @@ html {
 .MainContentContainer {
   display: flex;
   flex-direction: row;
-  padding-top: var(--paddingTop);
 }
 
 .SectionContentContainer {
@@ -562,6 +571,11 @@ html {
       width: 80%;
     }
   }
+
+#intro {
+    font-size: 1.5rem;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -647,12 +661,15 @@ html {
     height: 48px;
   }
 
+#intro {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
 
   :root {
-    --paddingTop: 30vw;
+    --paddingTop: 10%;
   }
 
   .logo{
@@ -660,9 +677,7 @@ html {
     height: 62px;
   }
 
-  #intro {
-    font-size: 2rem;
-  }
+  
 
   
 }
