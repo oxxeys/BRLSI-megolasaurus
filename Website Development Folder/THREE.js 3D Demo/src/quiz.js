@@ -18,10 +18,10 @@ let RArrow;
 let tick;
 let cross;
 
-const artifactLinks = ['/images/thigh.jpg', '/images/jaw.png'];
-const textures1Links = ['/images/giant.jpg', '/images/parrot.jpg']
-const textures2Links = ['/images/unicorn.jpg', '/images/lizard.jpg']
-const textures3Links = ['/images/phoenix.jpg', '/images/cat.jpg']
+const artifactLinks = ['assets/images/thigh.jpg', 'assets/images/jaw.png'];
+const textures1Links = ['assets/images/giant.jpg', 'assets/images/parrot.jpg']
+const textures2Links = ['assets/images/unicorn.jpg', 'assets/images/lizard.jpg']
+const textures3Links = ['assets/images/phoenix.jpg', 'assets/images/cat.jpg']
 
 async function preloadImages() {
     await Assets.load(artifactLinks);
@@ -32,12 +32,12 @@ async function preloadImages() {
     textures2 = textures2Links.map(url => Texture.from(url));
     await Assets.load(textures3Links);
     textures3 = textures3Links.map(url => Texture.from(url));
-    await Assets.load('images/RArrow.png');
-    RArrow = Texture.from('images/RArrow.png');
-    await Assets.load('images/tick.png');
-    tick = Texture.from('images/tick.png');
-    await Assets.load('images/cross.png');
-    cross = Texture.from('images/cross.png');
+    await Assets.load('assets/images/RArrow.png');
+    RArrow = Texture.from('assets/images/RArrow.png');
+    await Assets.load('assets/images/tick.png');
+    tick = Texture.from('assets/images/tick.png');
+    await Assets.load('assets/images/cross.png');
+    cross = Texture.from('assets/images/cross.png');
 }
 
 (async () => {
@@ -50,7 +50,7 @@ async function preloadImages() {
         backgroundColor: 0x964B00
     });
 
-    document.body.appendChild(app.canvas);
+    document.getElementById("FirstGame").appendChild(app.canvas);
 
     await preloadImages();
 
