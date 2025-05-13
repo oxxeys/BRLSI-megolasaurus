@@ -40,19 +40,14 @@ async function preloadImages() {
     cross = Texture.from('assets/images/cross.png');
 }
 
+let app;
+
 (async () => {
 
-    const app = new Application();
-
-
-    var container = document.getElementById( 'FirstGame' );
-    console.log(container.clientWidth)
-    console.log(container.clientHeight)
-
+    app = new Application();
     await app.init({
-        width: container.clientWidth,
-        height: container.clientHeight,
-        backgroundColor: 0x964B00
+        width: 300,
+        height: 300,
     });
 
         document.getElementById("FirstGame").appendChild(app.canvas);
@@ -270,10 +265,16 @@ async function preloadImages() {
 })();
 
 
+window.addEventListener('resize', resize);
 
-function onWindowResize() { // from https://github.com/mrdoob/three.js/blob/70cc4e192fe2ebd0bf8542a81c8c513d61984c58/examples/webgl_geometries.html#L134 - allows for responsive resize
+function resize() {
 
-        // width: container.clientWidth,
-        // height: container.clientHeight,
-        
+  const parent = app.view.parentNode;
+  
+  app.renderer.resize(parent.clientWidth, parent.clientHeight);
+  
 }
+
+window.onload = function(){
+  resize();
+};
