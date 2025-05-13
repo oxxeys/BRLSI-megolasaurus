@@ -316,7 +316,7 @@ html {
   }
 
   #SectionTwoContentThree {
-    grid-column: 2 / 6;
+    grid-column: 1 / 4;
     grid-row: 4 / span 1;
   }
 
@@ -558,6 +558,7 @@ html {
   }
 
   #SectionTwo {
+    padding-left: 20%;
     #SectionTwoTitle {
       grid-column: 5 / span 1;
     }
