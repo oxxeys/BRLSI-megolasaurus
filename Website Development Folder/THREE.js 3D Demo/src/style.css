@@ -281,7 +281,7 @@ html {
   display: grid;
 
   grid-template-columns: repeat(6, 20px);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 20px;
   justify-items: center;
   align-items: center;
@@ -316,7 +316,7 @@ html {
   }
 
   #SectionTwoContentThree {
-    grid-column: 1 / 4;
+    grid-column: 3 / 5;
     grid-row: 4 / span 1;
   }
 
@@ -325,22 +325,11 @@ html {
     grid-row: 5 / span 1;
   } */
 
-  #jaw {
-  display: block;
-  margin: auto;
-  width: 80%;
-  height: 70vh;
-  top: 120px;
-  z-index: 0;
-  margin-top: 5px;
-  border: #1A0C04;
-  border-style: solid;
-  border-width: 1px;
-  grid-column: 1 / span 6;
-  grid-row: 5 / span 1;
-  }
+
 
 }
+
+
 
 #SectionThree {
   background: var(--DirtThree);
@@ -364,13 +353,17 @@ html {
   }
 
   #SectionThreeTitle {
-    grid-column: 2 / span 1;
+    grid-column: 4 / span 1;
     grid-row: 1 / span 1;
   }
 
   #SectionThreeContentOne {
     position: relative;
     grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+  }
+  #ConfusedGirl{
+    grid-column: 5 / span 1;
     grid-row: 2 / span 1;
   }
 
@@ -384,12 +377,31 @@ html {
     grid-column: 2 / 6;
     grid-row: 4 / span 1;
   }
+  #HappyGirl{
+    grid-column: 2 / 6;
+    grid-row: 4 / span 1;
+    padding-left: 50%;
+  }
 
   #ThirdGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
   }
 
+  #jaw {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 70vh;
+  top: 120px;
+  z-index: 0;
+  margin-top: 5px;
+  border: #1A0C04;
+  border-style: solid;
+  border-width: 1px;
+  grid-column: 1 / span 6;
+  grid-row: 5 / span 1;
+  }
 }
 
 #SectionFour {
@@ -568,6 +580,11 @@ html {
 
   #SectionThree {
     grid-template-columns: repeat(3, 1fr);
+     
+    #SectionThreeTitle {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 1;
+    }
   }
 
   #SectionFour {
@@ -645,6 +662,10 @@ html {
       width: 250%;
       height: 250%;
     }
+
+    #SectionTwoContentThree {
+    grid-column: 1 / 4;
+    }
   }
 
   #SectionThree {
@@ -662,7 +683,17 @@ html {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(8, 1fr);
     padding: 0;
-  
+
+    #SectionFourTitle {
+      height: 120%;
+      width: 120%;
+    }
+  #SectionFourContentOne {
+    grid-column:  1/ span 3;
+  }
+  #SectionFourContentThree {
+    grid-column:  3/ span 6;
+  }
    #SectionFourContentFour {
     grid-row: 7 / span 1;
   }
@@ -681,10 +712,7 @@ html {
 #intro {
     font-size: 2rem;
   }
-.archeologist {
-  width: 322px;
-  height: 400px;
-}
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -699,7 +727,10 @@ html {
     padding: 0 10px;
   }
 
-  
+  .archeologist {
+  width: 322px;
+  height: 400px;
+}
 
   
 }
