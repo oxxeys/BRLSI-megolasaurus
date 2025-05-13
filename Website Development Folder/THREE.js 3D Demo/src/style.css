@@ -44,7 +44,7 @@ html {
 #TitleSection {
   height: 100vh;
   font-family: var(--font);
-  background-image: url("./assets/HeroBackground.jpg");
+  background-image: url("./assets/HeroBackground2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -91,16 +91,16 @@ html {
   padding: 1rem 0.5rem 0px 0.5rem;
 }
 
+
+
 #intro {
-  /* height: 50vh; */
+  background: url('./assets/backgroundMainOr.jpg') no-repeat center center;
+  background-size: cover;
   padding: 16px;
   text-align: center;
-  max-width: 60ch;
-
-  margin: auto;
-  width: 90%;
-  padding-top: var(--paddingTop);
-
+  width: 100vw;
+  height: 100vh; /* or set a specific height */
+  margin: 0;
 }
 
 #introBox {
@@ -122,6 +122,8 @@ html {
   align-items: center;
   justify-content: center;
   padding-top: var(--paddingTop);
+  
+
 }
 
 .archeologist {
