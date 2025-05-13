@@ -7,12 +7,16 @@
     <title>Scroll base animation</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./assets/BRLSI logo.png">
+    <script type="module" src="./jaw.js"></script>
+    <script type="module" src="./skull.js"></script>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
 </head>
 
 <body>
+    
     <!-- Canvas used for three.js [MUST KEEP] -->
     <!-- <canvas class="webgl"></canvas> -->
-
+    
     <section id="TitleSection">
         <div id="logoContainer">
             <img class="logo" id="BRLSILogo" src="./assets/BRLSI logo.png">
@@ -46,7 +50,7 @@
         </div>
     </section>
 
-    <div class="break"></div>
+    <div class="break" style="height: 100px"></div>
 
     <div class="MainContentContainer">
 
@@ -189,8 +193,12 @@
                         </body>
                     </foreignobject>
                 </svg>
-
-                <div id="FirstGame" style="height:40vh;width: 80%; background-color: aqua;">game</div>
+                
+                <div id="FirstGame">
+                    <script type="module" src="quiz.js"></script>
+                </div>
+                <div id="skull"></div>
+                
             </section>
 
             <div class="break"></div>
@@ -258,7 +266,8 @@
                 </svg>
 
                 <!-- game here -->
-                <div id="SecondGame" style="height:40vh;width: 80%; background-color: aqua;"></div>
+                <!-- <div id="SecondGame" style="height:40vh;width: 80%; background-color: aqua;"></div> -->
+                <div id="jaw"></div>
 
                 <svg id="SectionTwoContentThree" xmlns="http://www.w3.org/2000/svg" width="255" height="225"
                     viewBox="0 0 260 260" fill="none">
@@ -547,7 +556,7 @@
     </footer>
 
     <!-- Javascript Stuff [MUST KEEP] -->
-    <script type="module" src="./script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="gsap.js"></script>
