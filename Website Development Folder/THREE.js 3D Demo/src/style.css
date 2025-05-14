@@ -380,8 +380,9 @@ html {
   #HappyGirl{
     grid-column: 2 / 6;
     grid-row: 4 / span 1;
-    padding-left: 50%;
+    padding-left: 60%;
   }
+
 
   #ThirdGame {
     grid-column: 1 / span 6;
