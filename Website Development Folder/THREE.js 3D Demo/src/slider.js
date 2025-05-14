@@ -1,39 +1,35 @@
-import { Application, 
-    Graphics,
-    Container,
-    Text,
-    TextStyle,
-    Assets,
-    Sprite,
-    Texture,
-    textureFrom
-} from "pixi.js";
+const {
+  Application,
+  Container,
+  Assets,
+  Sprite,
+  Texture,
+  Ticker,
+  Rectangle
+} = PIXI;
 
 let app;
 const gridSize = 3;
 const tileSize = 200;
-const empty = { x: 2, y: 2};
+const empty = { x: 2, y: 2 };
 let tiles = [];
 
-async function preloadImages() {
-    await Assets.load('assets/images/thigh.jpg')
-}
-
 (async () => {
+  app = new Application();
+  await app.init({
+    width: 600,
+    height: 600,
+    backgroundAlpha: 0.2
+  });
 
-    app = new Application();
-    await app.init({
-        width: 800,
-        height: 800,
-        backgroundAlpha: 0.2
-    });
-    
-    document.getElementById("FourthGame").appendChild(app.canvas);
-    resize();
-    await preloadImages();
+  document.getElementById("FourthGame").appendChild(app.canvas);
+  resize();
 
-    const baseTexture = Texture.from('assets/images/thigh.jpg').baseTexture;
-    console.log(baseTexture.valid); // should be true
+  const texture = await Assets.load('assets/images/thigh.jpg');
+  const baseTexture = texture.baseTexture;
+
+  const tileWidth = baseTexture.width / gridSize;
+  const tileHeight = baseTexture.height / gridSize;
 
   const tileContainer = new Container();
   app.stage.addChild(tileContainer);
@@ -46,21 +42,25 @@ async function preloadImages() {
         continue;
       }
 
-      const frame = new Rectangle(x * tileSize, y * tileSize, tileSize, tileSize);
-      const texture = new Texture(baseTexture, frame);
-      const sprite = new Sprite(texture);
-      sprite.tint = 0xff0000; // red overlay for visibility
+      const frame = new Rectangle(
+        x * tileWidth,
+        y * tileHeight,
+        tileWidth,
+        tileHeight
+      );
+
+      const tileTexture = new Texture(baseTexture, frame);
+      const sprite = new Sprite(tileTexture);
 
       sprite.x = x * tileSize;
       sprite.y = y * tileSize;
-      sprite.gridX = x;
-      sprite.gridY = y;
       sprite.width = tileSize;
       sprite.height = tileSize;
+      sprite.gridX = x;
+      sprite.gridY = y;
 
       sprite.eventMode = 'static';
       sprite.cursor = 'pointer';
-
       sprite.on('pointerdown', () => tryMove(sprite));
 
       tileContainer.addChild(sprite);
@@ -76,17 +76,16 @@ function tryMove(tile) {
   const dy = Math.abs(tile.gridY - empty.y);
 
   if ((dx === 1 && dy === 0) || (dx === 0 && dy === 1)) {
-    // Animate move
-    animateMove(tile, empty.x, empty.y);
-
-    tiles[empty.y][empty.x] = tile;
-    tiles[tile.gridY][tile.gridX] = null;
-
     const oldX = tile.gridX;
     const oldY = tile.gridY;
 
+    tiles[empty.y][empty.x] = tile;
+    tiles[oldY][oldX] = null;
+
     tile.gridX = empty.x;
     tile.gridY = empty.y;
+
+    animateMove(tile, tile.gridX, tile.gridY);
 
     empty.x = oldX;
     empty.y = oldY;
@@ -118,9 +117,23 @@ function animateMove(sprite, targetGridX, targetGridY) {
 
 function shuffleBoard() {
   for (let i = 0; i < 100; i++) {
-    const neighbors = getMovableTiles();
-    const tile = neighbors[Math.floor(Math.random() * neighbors.length)];
-    tryMove(tile);
+    const movable = getMovableTiles();
+    const tile = movable[Math.floor(Math.random() * movable.length)];
+    if (tile) {
+      const oldX = tile.gridX;
+      const oldY = tile.gridY;
+
+      tiles[empty.y][empty.x] = tile;
+      tiles[oldY][oldX] = null;
+
+      tile.gridX = empty.x;
+      tile.gridY = empty.y;
+      tile.x = tile.gridX * tileSize;
+      tile.y = tile.gridY * tileSize;
+
+      empty.x = oldX;
+      empty.y = oldY;
+    }
   }
 }
 
@@ -146,15 +159,9 @@ function getMovableTiles() {
 }
 
 function resize() {
-
   const parent = app.view.parentNode;
-  
   app.renderer.resize(parent.clientWidth, parent.clientHeight);
-  
 }
 
 window.addEventListener("resize", resize);
-
-window.onload = function(){
-  resize();
-};
+window.onload = () => resize();
