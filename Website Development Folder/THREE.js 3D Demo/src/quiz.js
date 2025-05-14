@@ -258,9 +258,11 @@ let app;
     function showAnswer(x){
         if (corrects.includes(x)){
             tickCross.texture = tick;
+            answerText.text=facts[questionNo];
         }
         else{
             tickCross.texture = cross;
+            answerText.text=corrections[questionNo];
         }
         answerPage1.visible=true;
     };
@@ -275,7 +277,7 @@ function resize() {
 
   const parent = app.view.parentNode;
   
-  app.renderer.resize(parent.clientWidth, parent.clientHeight);
+  app.renderer.resize(parent.clientWidth, parent.clientHeight+400);
   
 }
 
