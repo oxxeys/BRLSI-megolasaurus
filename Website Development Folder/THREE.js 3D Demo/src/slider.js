@@ -1,4 +1,5 @@
 const {
+
   Application,
   Container,
   Assets,
@@ -13,6 +14,20 @@ const gridSize = 3;
 const tileSize = 200;
 const empty = { x: 2, y: 2 };
 let tiles = [];
+let textures = [];
+textures[0] = [];
+textures[1] = [];
+textures[2] = [];
+textures[0][0] = await Assets.load('/assets/images/1.png');
+textures[0][1] = await Assets.load('/assets/images/2.png');
+textures[0][2] = await Assets.load('/assets/images/3.png');
+textures[1][0] = await Assets.load('/assets/images/4.png');
+textures[1][1] = await Assets.load('/assets/images/5.png');
+textures[1][2] = await Assets.load('/assets/images/6.png');
+textures[2][0] = await Assets.load('/assets/images/7.png');
+textures[2][1] = await Assets.load('/assets/images/8.png');
+textures[2][2] = await Assets.load('/assets/images/9.png');
+
 
 (async () => {
   app = new Application();
@@ -49,7 +64,7 @@ let tiles = [];
         tileHeight
       );
 
-      const tileTexture = new Texture(baseTexture, frame);
+      const tileTexture = new Texture(textures[x][y]);
       const sprite = new Sprite(tileTexture);
 
       sprite.x = x * tileSize;
