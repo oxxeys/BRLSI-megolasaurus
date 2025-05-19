@@ -171,14 +171,12 @@ html {
   background: rgb(144, 111, 34); 
   max-width: 100px;
   background-image: url("./assets/Elevator-Tile.png");
-  background-size: cover;
-  background-position: center;
+  background-repeat: repeat-y;
 
 }
 
 .elevator {
   width: 100%;
-  
 }
 
 
@@ -230,6 +228,11 @@ html {
   #TitleSectionOne {
     position: relative;
     font-size: 1.25rem;
+  }
+
+  #HappyGuy{
+  grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
   }
 
   #SectionOneTitle {
@@ -320,6 +323,13 @@ html {
     grid-row: 4 / span 1;
   }
 
+  #confusedGuy{
+    grid-column: 3 / 5;
+    grid-row: 4 / span 1;
+    transform: rotate(10deg);
+    padding-right: 10%;
+  }
+
   /* #SecondGame {
     grid-column: 1 / span 6;
     grid-row: 5 / span 1;
@@ -356,6 +366,11 @@ html {
     grid-column: 4 / span 1;
     grid-row: 1 / span 1;
   }
+  #NormalGirl{
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 1;
+   transform: rotate(20deg);
+  }
 
   #SectionThreeContentOne {
     position: relative;
@@ -365,6 +380,7 @@ html {
   #ConfusedGirl{
     grid-column: 5 / span 1;
     grid-row: 2 / span 1;
+    transform: rotate(-10deg);
   }
 
   #SectionThreeContentTwo {
@@ -381,6 +397,7 @@ html {
     grid-column: 2 / 6;
     grid-row: 4 / span 1;
     padding-left: 60%;
+    transform: rotate(10deg);
   }
 
 
@@ -441,6 +458,10 @@ html {
     grid-column: 2 / span 4;
     grid-row: 3/ span 1;
   }
+  #happyGuy{
+    grid-column: 3 / span 5;
+    grid-row: 3/ span 1;
+  }
 
   #SectionFourContentThree {
     grid-column: 2 / 5;
@@ -483,18 +504,18 @@ html {
   }
 
   #SectionFiveTitle {
-    grid-column: 2 / span 4;
+    grid-column: 2/ span 3;
     grid-row: 1 / span 1;
   }
 
   #SectionFiveContentOne {
-    position: relative;
-    grid-column: 2 / span 4;
+    
+    grid-column: 1 / span 2;
     grid-row: 2 / span 1;
   }
 
   #SectionFiveContentTwo {
-    grid-column: 2 / span 4;
+    grid-column: 4 / span 2;
     grid-row: 3/ span 1;
   }
 
@@ -508,6 +529,18 @@ html {
     grid-row: 5 / span 1;
   }
 
+#happyGuyEnd{
+grid-column: 5 / span 1;
+    grid-row: 5 / span 1;
+}
+#happyGirlEnd{
+  grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+}
+#happyGrampEnd{
+  grid-column: 3 / span 2;
+    grid-row: 5 / span 1;
+}
 }
 
 #archeologist {
@@ -735,3 +768,48 @@ html {
 
   
 }
+
+
+.footer-modern {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--DirtFive);
+    color: #fff;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-family: sans-serif;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .footer-column h3 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .footer-column a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
