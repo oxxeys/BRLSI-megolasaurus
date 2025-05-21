@@ -76,10 +76,10 @@ textures[2][2] = await Assets.load('/assets/images/9.png');
 
       newTile.eventMode = 'static';
       newTile.cursor = 'pointer';
-      newTile.on('pointerdown', () => tryMove(sprite));
+      newTile.on('pointerdown', () => tryMove(newTile));
 
-      tileContainer.addChild(sprite);
-      tiles[y][x] = sprite;
+      tileContainer.addChild(newTile);
+      tiles[y][x] = newTile;
     }
   }
 
