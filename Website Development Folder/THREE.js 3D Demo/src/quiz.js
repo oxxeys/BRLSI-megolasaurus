@@ -48,13 +48,18 @@ let app;
 
     app = new Application();
     await app.init({
+<<<<<<< Updated upstream
         backgroundAlpha:0.3
 
+=======
+        backgroundAlpha: 0.2
+>>>>>>> Stashed changes
     });
 
         document.getElementById("FirstGame").appendChild(app.canvas);
 
     await preloadImages();
+    resize();
 
     resize();
 
