@@ -48,27 +48,13 @@ let app;
 
     app = new Application();
     await app.init({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        backgroundAlpha:0.3
-
-=======
-        backgroundAlpha: 0.2
->>>>>>> Stashed changes
-=======
-        backgroundAlpha: 0.2
->>>>>>> Stashed changes
+        backgroundAlpha:0.5
     });
 
         document.getElementById("FirstGame").appendChild(app.canvas);
 
     await preloadImages();
     resize();
-<<<<<<< Updated upstream
-
-    resize();
-=======
->>>>>>> Stashed changes
 
     var questionNo = 0;
     const questions = ["Which mythical creature could this bone belong to?", "Which real life creature could this belong to?"];
@@ -77,7 +63,7 @@ let app;
     const answers3 = ["Phoenix", "Cat"];
     
 
-    //question box initialied
+    //question box initialised
     const questionBox = new Container();
     app.stage.addChild(questionBox);
     //loads image
@@ -90,7 +76,7 @@ let app;
     const question = new Text({
         text: questions[questionNo],
         style: {
-            fill: 0x000000,
+            fill: 0xffffff,
             fontSize: 100,
             fontFamily: 'Montserrat Medium',
         }
@@ -114,7 +100,7 @@ let app;
     const answer1 = new Text({
         text: answers1[questionNo],
         style: {
-            fill: 0x000000,
+            fill: 0xffffff,
             fontSize: 200,
             fontFamily: 'Montserrat Medium',
         }
@@ -143,7 +129,7 @@ let app;
     const answer2 = new Text({
         text: answers2[questionNo],
         style: {
-            fill: 0x000000,
+            fill: 0xffffff,
             fontSize: 200,
             fontFamily: 'Montserrat Medium',
         }
@@ -171,7 +157,7 @@ let app;
     const answer3 = new Text({
         text: answers3[questionNo],
         style: {
-            fill: 0x000000,
+            fill: 0xffffff,
             fontSize: 200,
             fontFamily: 'Montserrat Medium',
         }

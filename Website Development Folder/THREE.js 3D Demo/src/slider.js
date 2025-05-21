@@ -65,18 +65,18 @@ textures[2][2] = await Assets.load('/assets/images/9.png');
       );
 
       const tileTexture = new Texture(textures[x][y]);
-      const sprite = new Sprite(tileTexture);
+      const newTile = new Sprite(tileTexture);
 
-      sprite.x = x * tileSize;
-      sprite.y = y * tileSize;
-      sprite.width = tileSize;
-      sprite.height = tileSize;
-      sprite.gridX = x;
-      sprite.gridY = y;
+      newTile.x = x * tileSize;
+      newTile.y = y * tileSize;
+      newTile.width = tileSize;
+      newTile.height = tileSize;
+      newTile.gridX = x;
+      newTile.gridY = y;
 
-      sprite.eventMode = 'static';
-      sprite.cursor = 'pointer';
-      sprite.on('pointerdown', () => tryMove(sprite));
+      newTile.eventMode = 'static';
+      newTile.cursor = 'pointer';
+      newTile.on('pointerdown', () => tryMove(sprite));
 
       tileContainer.addChild(sprite);
       tiles[y][x] = sprite;
