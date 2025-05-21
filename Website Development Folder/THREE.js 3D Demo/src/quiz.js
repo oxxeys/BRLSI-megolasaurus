@@ -49,8 +49,12 @@ let app;
     app = new Application();
     await app.init({
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         backgroundAlpha:0.3
 
+=======
+        backgroundAlpha: 0.2
+>>>>>>> Stashed changes
 =======
         backgroundAlpha: 0.2
 >>>>>>> Stashed changes
@@ -60,8 +64,11 @@ let app;
 
     await preloadImages();
     resize();
+<<<<<<< Updated upstream
 
     resize();
+=======
+>>>>>>> Stashed changes
 
     var questionNo = 0;
     const questions = ["Which mythical creature could this bone belong to?", "Which real life creature could this belong to?"];
